@@ -1,3 +1,20 @@
 #portfolio {
     background-color: #D5FB00;
 }
+
+body {
+    cursor: url('img/cursor_1.cur'), pointer;
+}
+
+.over-container {
+    width: 90%;
+    height: 90%;
+}
+
+hr.star-light:after {
+    background-color: #F10051;
+}
+
+hr.star-primary:after {
+    background-color: #D5FB00;
+}
