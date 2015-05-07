@@ -300,7 +300,7 @@
     <h1>Discute en direct avec Repy !</h1>
 
     <form id="formulaire_chat">
-        <input type="text" name="message" id="message" placeholder="Votre message..." size="50" autofocus />
+        <input type="text" name="message" id="message" placeholder="Votre message..." size="50" />
         <input type="submit" id="envoi_message" value="Envoyer" />
     </form>
 
@@ -330,37 +330,46 @@
     <script src="socket.io/socket.io.js"></script>
 
     <script>
+            var connected = false;
+            var socket;
+            var pseudo;
+            var myColor;
 
+            $('#message').on('click', function () {
+                if (!connected) {
 
-            // Connexion à socket.io
-            var socket = io.connect('http://127.0.0.1:1337/');
-            var pseudo = prompt('Quel est votre pseudo ?');
-            var myColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-            socket.emit('nouveau_client', pseudo, myColor);
+                    // Connexion à socket.io
+                    socket = io.connect('http://127.0.0.1:1337/');
+                    pseudo = prompt('Quel est votre pseudo ?');
+                    myColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+                    socket.emit('nouveau_client', pseudo, myColor);
+                    connected = true;
 
-            // Quand on reçoit un message, on l'insère dans la page
-            socket.on('message', function(data) {
-                insereMessage(data.pseudo, data.color, data.message)
-            })
+                    $('#formulaire_chat').submit(function () {
+                        var message = $('#message').val();
+                        socket.emit('message', message); // Transmet le message aux autres
+                        insereMessage(pseudo, myColor, message); // Affiche le message aussi sur notre page
+                        $('#message').val('').focus(); // Vide la zone de Chat et remet le focus dessus
+                        return false; // Permet de bloquer l'envoi "classique" du formulaire
+                    });
 
-            // Quand un nouveau client se connecte, on affiche l'information
-            socket.on('nouveau_client', function(pseudo) {
-                $('#zone_chat').prepend('<p><em>' + pseudo + ' a rejoint le Chat !</em></p>');
-            })
+                    // Quand on reçoit un message, on l'insère dans la page
+                    socket.on('message', function(data) {
+                        insereMessage(data.pseudo, data.color, data.message)
+                    })
 
-            // Lorsqu'on envoie le formulaire, on transmet le message et on l'affiche sur la page
-            $('#formulaire_chat').submit(function () {
-                var message = $('#message').val();
-                socket.emit('message', message); // Transmet le message aux autres
-                insereMessage(pseudo, myColor, message); // Affiche le message aussi sur notre page
-                $('#message').val('').focus(); // Vide la zone de Chat et remet le focus dessus
-                return false; // Permet de bloquer l'envoi "classique" du formulaire
+                    // Quand un nouveau client se connecte, on affiche l'information
+                    socket.on('nouveau_client', function(pseudo) {
+                        $('#zone_chat').prepend('<p><em>' + pseudo + ' a rejoint le Chat !</em></p>');
+                    })
+                }
             });
             
             // Ajoute un message dans la page
             function insereMessage(pseudo, color, message) {
                 $('#zone_chat').prepend('<p><span style="color:' + color + '">' + pseudo + '</span> : ' + message + '</p>');
             }
+
         </script>
 
 
