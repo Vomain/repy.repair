@@ -13,7 +13,7 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <link rel="icon" href="http://usvsth3m.co.uk/favicon.ico">
@@ -335,31 +335,31 @@
         /* Types */
 
         .z {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .o {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .i {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .s {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .t {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .l {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
 
         .j {
-            background-image: url(img/techstars.louis.JPG) !important;
+            background-image: url(img/rep_tetris.jpg) !important;
         }
         /* End Types */
 
@@ -1216,62 +1216,64 @@
 
 <body>
 
-<div id="fix"></div>
+    <div id="fix"></div>
 
-<div class="over-container">
+    <div class="over-container">
 
-    <div class="game-container">
+        <div class="game-container">
 
-        <div id="next">
+            <div id="next">
 
-        </div>
+            </div>
 
-        <div class="score-container">
-            <div class="score-interior score"></div>
-        </div>
+            <div class="score-container">
+                <div class="score-interior score"></div>
+            </div>
 
-        <div class="grid-container">
+            <div class="grid-container">
 
-            <table id="tetris-grid">
-            </table>
+                <table id="tetris-grid">
+                </table>
 
-        </div>
+            </div>
 
-        <div class="panel" id="intro">
+            <div class="panel" id="intro">
 
-            <div class="panel-interior">
+                <div class="panel-interior">
 
-                <div class="box">
-                    <h1>Le Tetris de Repy</h1>
-                    <p>
-                        <button onClick="startGame()">Jouer</button>
-                    </p>
-                    <div class="swipe">
-                        <p>Glisser à gauche/droite pour bouger</p>
-                        <p>Appuyer pour rotationner</p>
+                    <div class="box">
+                        <h1>Le Tetris de Repy</h1>
+                        <p>
+                            <button onClick="startGame()">Jouer</button>
+                        </p>
+                        <div class="swipe">
+                            <p>Glisser à gauche/droite pour bouger</p>
+                            <p>Appuyer pour rotationner</p>
+                        </div>
+                        <div class="keyboard">
+                            <p>Gauche/Droite pour bouger. Haut pour rotationner.</p>
+                        </div>
                     </div>
-                    <div class="keyboard">
-                        <p>Gauche/Droite pour bouger. Haut pour rotationner.</p>
-                    </div>
+
                 </div>
 
             </div>
 
-        </div>
 
+            <div class="panel" id="end">
 
-        <div class="panel" id="end">
+                <div class="panel-interior">
 
-            <div class="panel-interior">
+                    <div class="box">
+                        <h1>Tu chies Repy ! Tu as perdu :(</h1>
+                        <br />
+                        <h2>Tu as fait <span class="score">24</span> ligne<span class="plural">s</span>!</h2>
+                        <br />
+                        <p>
+                            <button onClick="startGame()">Tu veux rejouer mon grand ?</button>
+                        </p>
 
-                <div class="box">
-                    <h1>Tu chies Repy ! Tu as perdu :(</h1>
-                    <br />
-                    <h2>Tu as fait <span class="score">24</span> ligne<span class="plural">s</span>!</h2>
-                    <br />
-                    <p>
-                        <button onClick="startGame()">Tu veux rejouer mon grand ?</button>
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1281,12 +1283,10 @@
 
     </div>
 
-</div>
 
-
-<div class="preload">
-    <img src="img/techstars.louis.JPG" class="preload">
-</div>
+    <div class="preload">
+        <img src="img/rep_tetris.jpg" class="preload">
+    </div>
 
 
 

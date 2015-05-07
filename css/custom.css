@@ -2,8 +2,9 @@
     background-color: #D5FB00;
 }
 
-body {
-    cursor: url('img/cursor_1.cur'), pointer;
+* {
+    cursor: url('../img/cursor_2.cur'), pointer;
+    /*http://www.digitalcoding.com/tools/image-converter.html*/
 }
 
 .over-container {
@@ -17,4 +18,45 @@ hr.star-light:after {
 
 hr.star-primary:after {
     background-color: #D5FB00;
+}
+
+hr.star-portfolio:after {
+    background-color: white;
+}
+
+video {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+}
+
+.video-vertiges {
+    height: 500px;
+    width: 720px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+}
+
+.video-badgers {
+    height: 315px;
+    width: 560px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
 }
